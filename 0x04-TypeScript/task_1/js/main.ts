@@ -15,8 +15,20 @@ const teacher: Teacher = {
   contract: false,
 };
 
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+const director: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
 teacher.contract = true;
 teacher.yearsOfExperience = 5;
 
 console.log(teacher);
-
+console.log(director);
