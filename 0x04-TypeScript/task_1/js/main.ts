@@ -15,6 +15,14 @@ const teacher: Teacher = {
   contract: false,
 };
 
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return `${firstName.split('')[0]}. ${lastName}`;
+}
+
 interface Directors extends Teacher {
   numberOfReports: number;
 }
