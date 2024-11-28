@@ -8,7 +8,7 @@ module.exports = function calculateNumber(type, a, b) {
 
   if (type === 'DIVIDE') {
     if (Math.round(b) === 0) {
-      return 'ERROR';
+      return 'Error';
     }
     return Math.round(a) / Math.round(b);
   }
