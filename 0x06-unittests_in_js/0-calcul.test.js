@@ -1,5 +1,4 @@
 const assert = require('assert');
-const mocha = require('mocha');
 
 const calculateNumber = require('./0-calcul');
 
@@ -16,4 +15,4 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
 
-});
+})
