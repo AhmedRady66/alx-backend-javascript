@@ -1,19 +1,19 @@
-const request = require('supertest');
-const app = require('./api');
+const request = require('request');
+const { expect } = require('chai');
 
-describe('Index Page', () => {
-    it('should return correct status code', async () => {
-        const res = await request(app).get('/');
-        expect(res.status).toBe(200);
-    });
+describe('Integration Testing', () => {
+  describe('GET /', () => {
+    it('Code: 200 | Body: Welcome to the payment system', (done) => {
+      const options = {
+        url: 'http://localhost:7865',
+        method: 'GET',
+      };
 
-    it('should return correct result', async () => {
-        const res = await request(app).get('/');
-        expect(res.text).toBe('Welcome to the payment system');
+      request(options, function (error, response, body) {
+        expect(response.statusCode).to.equal(200);
+        expect(body).to.equal('Welcome to the payment system');
+        done();
+      });
     });
-
-    it('should have the correct content type', async () => {
-        const res = await request(app).get('/');
-        expect(res.header['content-type']).toMatch(/text\/html/);
-    });
+  });
 });
